@@ -42,3 +42,10 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
     - Platform independent widgets: Text, Image
     - Material widgets: Scaffold, AppBar
     ![Lesson 6](images/3.jpg)
+
+- Lesson 7: Layout trong Flutter.
+  - Dựa trên số widget con, chia làm 2 loại chính:
+    - Single Child Widgets - Chỉ có một widget con.
+    - Multiple Child Widgets - Có nhiều widget con.
+  - Áp dụng tạo layout danh sách phim:
+  ![Lesson 7](images/4.jpg)
