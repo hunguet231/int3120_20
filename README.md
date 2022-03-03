@@ -21,3 +21,12 @@ MSV: 19021290
   - Trong Flutter, tất cả đều quy về các widget, một widget phức hợp sẽ bao gồm các widget khác bên trong.
   - GestureDetector widget hỗ trợ các tính năng về tương tác (kéo, vuốt, chạm,...).
   - Trạng thái (state) của widget được quản lý và cập nhật bởi StatefulWidget widget.
+
+- Lesson 5: Tìm hiểu về ngôn ngữ Dart.
+  - Là ngôn ngữ lập trình mã nguồn mở đa năng.
+  - Được phát triển bởi Google.
+  - Là ngôn ngữ lập trình hướng đối tượng sử dụng cú pháp của C (C-style syntax).
+  - Không hỗ trợ mảng (array).
+  - Hồ trợ các kiểu dữ liệu: Number, String, Boolean, List, Map, Dynamic.
+  - Có các cấu trúc điều khiển và vòng lặp.
+  - Lập trình với hàm và hướng đối tượng.
