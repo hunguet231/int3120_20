@@ -55,3 +55,8 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
   - Một số cử chỉ phổ biến như: Tap, Double Tap, Drag, Flick, Pinch, Spread, Panning.
   - Áp dụng GestureDetector xử lý sự kiện ấn vào mô tả phim để bật lên dialog thông tin phim:
     ![Lesson 8](images/5.jpg)
+
+- Lesson 9: Giới thiệu sơ bộ về quản lý State trong Flutter.
+  - Dựa trên thời gian tồn tại của state, có thể chia làm 2 loại:
+    - Ephemeral (ngắn hạn): kéo dài trong thời gian ngắn, Flutter hỗ trợ quản lý state loại này thông qua StatefulWidget.
+    - App state (trạng thái ứng dụng): kéo dài trong toàn bộ app, Flutter hỗ trợ quản lý state loại này thông qua scoped_model.
