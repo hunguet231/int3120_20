@@ -2,8 +2,7 @@
 
 Repo báo cáo tiến độ tự học Flutter hàng tuần.
 
-Họ và tên: Nguyễn Văn Hùng
-MSV: 19021290
+Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
 
 ## Tuần 1
 
@@ -30,3 +29,16 @@ MSV: 19021290
   - Hồ trợ các kiểu dữ liệu: Number, String, Boolean, List, Map, Dynamic.
   - Có các cấu trúc điều khiển và vòng lặp.
   - Lập trình với hàm và hướng đối tượng.
+
+- Lesson 6: Widget trong Flutter.
+  - Dựa trên chức năng, widget được chia làm 4 nhóm:
+    - Các widget giao diện đặc thù theo từng nền tảng - Platform widgets (Material widgets thiết kế theo Material design guideline cho Android OS và Cupertino widgets được thiết kế theo Human Interface Guidelines cho IOS).
+    - Các widget hỗ trợ bố trí giao diện - Layout widgets.
+    - Các widget quản lý trạng thái - State maintenance widgets.
+    - Các widget cơ bản độc lập với nền tảng - Platform independent / basic widgets.
+
+  - Ứng dụng một số widget cơ bản xây dụng giao diện đơn giản:
+    - Layout widgets: Center, Column, Row, Padding
+    - Platform independent widgets: Text, Image
+    - Material widgets: Scaffold, AppBar
+    ![Lesson 6](images/3.jpg)
