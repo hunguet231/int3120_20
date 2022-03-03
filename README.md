@@ -16,3 +16,8 @@ MSV: 19021290
   ![Lesson 3](images/2.jpg)
 
 ## Tuần 2
+
+- Lesson 4: Kiến trúc ứng dụng Flutter.
+  - Trong Flutter, tất cả đều quy về các widget, một widget phức hợp sẽ bao gồm các widget khác bên trong.
+  - GestureDetector widget hỗ trợ các tính năng về tương tác (kéo, vuốt, chạm,...).
+  - Trạng thái (state) của widget được quản lý và cập nhật bởi StatefulWidget widget.
