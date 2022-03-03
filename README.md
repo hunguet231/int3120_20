@@ -49,3 +49,9 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
     - Multiple Child Widgets - Có nhiều widget con.
   - Áp dụng tạo layout danh sách phim:
   ![Lesson 7](images/4.jpg)
+
+- Lesson 8: Gesture trong Flutter.
+  - GestureDetector giúp xử lý các sự kiện cử chỉ một cách dễ dàng.
+  - Một số cử chỉ phổ biến như: Tap, Double Tap, Drag, Flick, Pinch, Spread, Panning.
+  - Áp dụng GestureDetector xử lý sự kiện ấn vào mô tả phim để bật lên dialog thông tin phim:
+    ![Lesson 8](images/5.jpg)

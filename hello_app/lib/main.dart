@@ -87,7 +87,27 @@ class MyHomePage extends StatefulWidget {
                   ),
                 ),
                 title: Text(films[index]['title']!),
-                subtitle: Text(films[index]['description']!),
+                subtitle: GestureDetector(
+                  child: Text(films[index]['description']!),
+                  onTap: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: Text(films[index]['title']!),
+                            content: Text(films[index]['description']!),
+                            actions: <Widget>[
+                              TextButton(
+                                child: const Text("OK"),
+                                onPressed: () {
+                                  Navigator.maybePop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  },
+                )
               );
             },
           ),
