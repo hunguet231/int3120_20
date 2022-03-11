@@ -102,3 +102,16 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
     - Dart package: có thể sử dụng trên nhiều môi trường.
     - Flutter package: phụ thuộc vào Flutter framework, có thể chỉ sử dụng trong môi trường mobile.
     - Flutter plugin: phụ thuộc vào Flutter framework và cả nền tảng (iOS SDK hay Android SDK).
+
+- Lesson 17; REST API.
+  - Flutter cung cấp package http để sử dụng nguồn HTTP. http là một thư viện Future-based sử dụng tính năng await và async. Nó cung cấp phương thức cấp cao và đơn giản để phát triển REST trên ứng dụng di động.
+  - Gói http cung cấp các lớp cấp cao và http request từ web.
+  - Một vài phương thức chính:
+    - read : gửi yêu cầu lên sever thông qua phương thức GET và trả về  Future<String>
+    - get : gửi yêu cầu lên sever thông qua   phương thức GET và trả về Future<Response>. Response là lớp giữ lại các thông tin phản hồi 
+    - post : gửi yêu cầu lên sever thông qua phương thức POST  bằng việc đưa giá trị lên sever và phản hồi Future<Response>
+    - put : gửi yêu cầu lên sever thông qua phương thức PUT và trả về phản hồi như Future<Response>
+    - head : gửi yêu cầu lên sever thông qua phương thức HEAD và trả về phản hồi như Future<Response>
+    - delete : gửi yêu cầu lên sever thông qua phương thức DELETE và trả về phản hồi như Future<Response>
+
+

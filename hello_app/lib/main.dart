@@ -1,16 +1,41 @@
 import 'dart:ui';
+import 'dart:async';
+import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp(
+    items: fetchItems(),
+  ));
+}
+
+List<Item> parseItems(http.Response response) {
+  final parsed =
+  json.decode(utf8.decode(response.bodyBytes)).cast<Map<String, dynamic>>();
+
+  return parsed.map<Item>((json) => Item.fromMap(json)).toList();
+}
+
+Future<List<Item>> fetchItems() async {
+  final response =
+  await http.get(Uri.parse('http://192.168.1.2:8000/data.json'));
+
+  if (response.statusCode == 200) {
+    return parseItems(response);
+  } else {
+    throw Exception('Unable to fetch products from the REST API');
+  }
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key, required this.items}) : super(key: key);
+
+  final Future<List<Item>> items;
 
   @override
   State<MyApp> createState() => _MyAppState();
