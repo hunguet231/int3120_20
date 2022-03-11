@@ -60,3 +60,13 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
   - Dựa trên thời gian tồn tại của state, có thể chia làm 2 loại:
     - Ephemeral (ngắn hạn): kéo dài trong thời gian ngắn, Flutter hỗ trợ quản lý state loại này thông qua StatefulWidget.
     - App state (trạng thái ứng dụng): kéo dài trong toàn bộ app, Flutter hỗ trợ quản lý state loại này thông qua scoped_model.
+
+- Lesson 10: StatefulWidget trong Flutter.
+  - Widget được kế thừa từ StatefulWidget  dùng để duy trì trạng thái và quản lý các trạng thái của nó.
+  ![Lesson 8](images/5.jpg)
+
+- Lesson 11: ScopedModel trong Flutter.
+  - Flutter có package scoped_model hỗ trợ việc quản lý trạng thái ứng dụng. Package này cung cấp 3 class chính:
+    - Model: Model đóng gói trạng thái của một ứng dụng. Model có một phương thức duy nhất là notifyListeners, notifyListeners sẽ thực hiện các công việc cần thiết để cập nhật giao diện.
+    - ScopedModel: Đây là widget giúp chuyển Data Model từ widget cha xuống các widget con đồng thời rebuild các widget con giữ các model khi các model được cập nhật.
+    - ScopedModelDescendant: Đây là widget lấy Data model từ lớp cha và build UI khi Data model thay đổi.
