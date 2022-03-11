@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
@@ -143,13 +144,28 @@ class _MyHomePageState extends State<MyHomePage> {
 
                     return ItemRow(item: item);
                   },
-                )
+                ),
+                ElevatedButton(
+                  child: const Text('Open Browser'),
+                  onPressed: () => _openBrowser("https://google.com"),
+                ),
               ],
             ),
           ),
         ),
       ),
     );
+  }
+
+  static const platform = MethodChannel('com.hung.lesson14');
+
+  _openBrowser(url) async {
+    try {
+      await platform
+          .invokeMethod('openBrowser', <String, String>{'url': url});
+    } on PlatformException catch (e) {
+      print(e);
+    }
   }
 }
 

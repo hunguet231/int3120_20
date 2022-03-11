@@ -90,3 +90,5 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
 
 - Lesson 14: Code với native Android.
   - Flutter cung cấp framework chung để truy cập vào các nền tảng có tính năng riêng biệt thông qua giao thức đơn giản là messaging. Client (Flutter code), mã nền tảng và Host liên kết với một thông báo chung gọi là Message Channel.
+
+    ![Lesson 14](images/10.png)
