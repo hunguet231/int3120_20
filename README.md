@@ -63,7 +63,7 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
 
 - Lesson 10: StatefulWidget trong Flutter.
   - Widget được kế thừa từ StatefulWidget  dùng để duy trì trạng thái và quản lý các trạng thái của nó.
-  ![Lesson 8](images/6.jpg)
+  ![Lesson 10](images/6.jpg)
 
 - Lesson 11: ScopedModel trong Flutter.
   - Flutter có package scoped_model hỗ trợ việc quản lý trạng thái ứng dụng. Package này cung cấp 3 class chính:
@@ -71,3 +71,11 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
     - ScopedModel: Đây là widget giúp chuyển Data Model từ widget cha xuống các widget con đồng thời rebuild các widget con giữ các model khi các model được cập nhật.
     - ScopedModelDescendant: Đây là widget lấy Data model từ lớp cha và build UI khi Data model thay đổi.
 
+- Lesson 12: Navigator và Routing.
+  - Flutter cung cấp lớp routing cơ bản là MaterialPageRoute cùng 2 phương thức Navigator.push() và Navigator.pop().
+    - MaterialPageRoute: Đây là widget dùng để render màn hình mới, có thể đi cùng với một hiệu ứng chuyển cảnh.
+    - Navigation.push(): Đây là phương thức dùng để chuyển sang màn hình mới.
+    - Navigation.pop(): Đây là phương thức dùng để quay lại màn hình trước đó.
+  
+    ![Lesson 12](images/7.png)
+    ![Lesson 12](images/8.png)
