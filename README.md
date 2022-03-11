@@ -87,3 +87,6 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
   - Tween: kế thừa từ Animatable và tạo các giá trị bất kì khác 0 và 1. Nó được sử dụng cùng với đối tượng animation bởi phương thức animate().
 
     ![Lesson 13](images/9.png)
+
+- Lesson 14: Code với native Android.
+  - Flutter cung cấp framework chung để truy cập vào các nền tảng có tính năng riêng biệt thông qua giao thức đơn giản là messaging. Client (Flutter code), mã nền tảng và Host liên kết với một thông báo chung gọi là Message Channel.
