@@ -8,25 +8,54 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> with SingleTickerProviderStateMixin {
+  Animation<double>? animation;
+
+  AnimationController? controller;
+
+  @override
+  void initState() {
+    super.initState();
+    controller =
+        AnimationController(duration: const Duration(seconds: 5), vsync: this);
+    animation = Tween<double>(begin: 0.0, end: 1.0).animate(controller!);
+    controller!.forward();
+  }
+
+  @override
+  void dispose() {
+    controller!.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    controller!.forward();
     return MaterialApp(
       title: 'Film Chill',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Film Chill'),
+      home: MyHomePage(title: 'Film Chill', animation: animation),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title, required this.animation})
+      : super(key: key);
+
   final String title;
+
+  final Animation<double>? animation;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -84,37 +113,39 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Container(
-        color: Colors.blueGrey.shade900,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: Column(
-            children: [
-              Container(
-                alignment: Alignment.topLeft,
-                margin: const EdgeInsets.only(left: 15.0),
-                child: const Text('Đang thịnh hành',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 22,
-                      color: Colors.white
-                    )),
-              ),
-              ListView.builder(
-                shrinkWrap: true,
-                itemCount: films.length,
-                itemBuilder: (context, index) {
-                  final itemData = films[index];
-                  final item = Item(
-                      itemData['title'].toString(),
-                      itemData['description'].toString(),
-                      itemData['cover'].toString(),
-                      itemData['rating'].toString());
+      body: FadeTransition(
+        opacity: widget.animation!,
+        child: Container(
+          color: Colors.blueGrey.shade900,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
+              children: [
+                Container(
+                  alignment: Alignment.topLeft,
+                  margin: const EdgeInsets.only(left: 15.0),
+                  child: const Text('Đang thịnh hành',
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 22,
+                          color: Colors.white)),
+                ),
+                ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: films.length,
+                  itemBuilder: (context, index) {
+                    final itemData = films[index];
+                    final item = Item(
+                        itemData['title'].toString(),
+                        itemData['description'].toString(),
+                        itemData['cover'].toString(),
+                        itemData['rating'].toString());
 
-                  return ItemRow(item: item);
-                },
-              )
-            ],
+                    return ItemRow(item: item);
+                  },
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -155,7 +186,9 @@ class ItemPage extends StatelessWidget {
                 child: Text(
                   item.title,
                   style: const TextStyle(
-                      fontWeight: FontWeight.w600, fontSize: 20, color: Colors.white),
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                      color: Colors.white),
                 ),
               ),
               Column(
@@ -164,7 +197,8 @@ class ItemPage extends StatelessWidget {
                     margin: const EdgeInsets.only(top: 3.5),
                     child: Text(
                       item.description,
-                      style: const TextStyle(fontSize: 16, color: Colors.white70),
+                      style:
+                          const TextStyle(fontSize: 16, color: Colors.white70),
                     ),
                   ),
                   Row(
@@ -214,14 +248,21 @@ class ItemRow extends StatelessWidget {
                   ),
                   title: Container(
                     margin: const EdgeInsets.only(top: 10.0),
-                    child: Text(item.title, style: const TextStyle(fontSize: 18, color: Colors.white),),
+                    child: Text(
+                      item.title,
+                      style: const TextStyle(fontSize: 18, color: Colors.white),
+                    ),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
                         margin: const EdgeInsets.only(top: 3.5),
-                        child: Text(item.description, style: const TextStyle(fontSize: 16, color: Colors.white70),),
+                        child: Text(
+                          item.description,
+                          style: const TextStyle(
+                              fontSize: 16, color: Colors.white70),
+                        ),
                       ),
                       Rating(item: item)
                     ],

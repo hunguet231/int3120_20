@@ -79,3 +79,11 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
   
     ![Lesson 12](images/7.png)
     ![Lesson 12](images/8.png)
+
+- Lesson 13: Animation.
+  - Animation: Tạo ra giá trị và được thêm vào giữa hai số (bắt đầu và kết thúc animation). Các kiểu animation thường được sử dụng là: Animation, Animation, Animation.
+  - AnimationController: đối tượng animation đặc biệt dùng để điều khiển các hiệu ứng của chính nó. Nó tạo ra các giá trị mới bất cứ khi nào ứng dụng sẵn sàng cho một frame mới, hỗ trợ các animation tuyến tính.
+  - CurvedAnimation: cơ bản giống như AnimationController nhưng hỗ trợ animation phi tuyến tính.
+  - Tween: kế thừa từ Animatable và tạo các giá trị bất kì khác 0 và 1. Nó được sử dụng cùng với đối tượng animation bởi phương thức animate().
+
+    ![Lesson 13](images/9.png)
