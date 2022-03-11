@@ -145,27 +145,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     return ItemRow(item: item);
                   },
                 ),
-                ElevatedButton(
-                  child: const Text('Open Browser'),
-                  onPressed: () => _openBrowser("https://google.com"),
-                ),
               ],
             ),
           ),
         ),
       ),
     );
-  }
-
-  static const platform = MethodChannel('com.hung.lesson14');
-
-  _openBrowser(url) async {
-    try {
-      await platform
-          .invokeMethod('openBrowser', <String, String>{'url': url});
-    } on PlatformException catch (e) {
-      print(e);
-    }
   }
 }
 
@@ -220,7 +205,11 @@ class ItemPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [Rating(item: item)],
-                  )
+                  ),
+                  ElevatedButton(
+                    child: const Text('Xem phim'),
+                    onPressed: () {},
+                  ),
                 ],
               ),
             ],

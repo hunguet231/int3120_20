@@ -92,3 +92,13 @@ Họ và tên: Nguyễn Văn Hùng | MSV: 19021290
   - Flutter cung cấp framework chung để truy cập vào các nền tảng có tính năng riêng biệt thông qua giao thức đơn giản là messaging. Client (Flutter code), mã nền tảng và Host liên kết với một thông báo chung gọi là Message Channel.
 
     ![Lesson 14](images/10.png)
+
+- Lesson 15: Code với native iOS.
+  - Sử dụng Objective-C/Swift và iOS SDK
+  
+- Lesson 16: Giới thiệu về package.
+  - Cách mà Dart tổ chức và chia sẻ các chức năng thông package. Dart Package là một thư viện hay mô hình đơn giản có thể chia sẻ. Nhìn chung, Dart package cũng giống như Dart Application ngoại trừ Dart Package không truy cập vào các điểm chính của ứng dụng.
+  - Các kiểu package:
+    - Dart package: có thể sử dụng trên nhiều môi trường.
+    - Flutter package: phụ thuộc vào Flutter framework, có thể chỉ sử dụng trong môi trường mobile.
+    - Flutter plugin: phụ thuộc vào Flutter framework và cả nền tảng (iOS SDK hay Android SDK).
